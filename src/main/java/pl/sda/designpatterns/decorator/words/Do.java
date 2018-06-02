@@ -1,0 +1,8 @@
+package pl.sda.designpatterns.decorator.words;
+
+public class Do implements Word {
+    @Override
+    public String display() {
+        return "do";
+    }
+}
