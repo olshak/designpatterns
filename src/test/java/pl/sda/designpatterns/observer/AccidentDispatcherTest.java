@@ -35,8 +35,7 @@ public class AccidentDispatcherTest {
         accidentDispatcher.addObserver(agentAbw);
 
         //when
-        accidentDispatcher.setAccidentType("Accident");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Accident");
 
         //then
         verify(ambulance).update(accidentDispatcher, "Accident");
@@ -71,8 +70,7 @@ public class AccidentDispatcherTest {
         accidentDispatcher.deleteObserver(agentAbw);
 
         //when
-        accidentDispatcher.setAccidentType("Accident");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Accident");
 
         //then
         verify(ambulance, never()).update(eq(accidentDispatcher), any());
@@ -83,8 +81,7 @@ public class AccidentDispatcherTest {
     @Test
     public void shouldNotNotifyObserversWhenNotAdded() {
         //when
-        accidentDispatcher.setAccidentType("Accident");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Accident");
 
         //then
         verify(ambulance, never()).update(eq(accidentDispatcher), any());

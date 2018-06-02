@@ -5,9 +5,10 @@ import java.util.Observable;
 public class AccidentDispatcher extends Observable {
     private String accidentType;
 
-    public void setAccidentType(String accidentType) {
+    public void accidentHappened(String accidentType) {
         this.accidentType = accidentType;
         setChanged();
+        notifyObservers(accidentType);
     }
 
     @Override

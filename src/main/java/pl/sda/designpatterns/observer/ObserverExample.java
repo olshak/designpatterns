@@ -15,18 +15,15 @@ public class ObserverExample {
         accidentDispatcher.addObserver(agentAbw);
 
         System.out.println("First accident (three observers):");
-        accidentDispatcher.setAccidentType("Intersection accident.");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Intersection accident.");
         System.out.println("\nSecond accident (three observers):");
-        accidentDispatcher.setAccidentType("Woman hit by a car.");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Woman hit by a car.");
 
         ((Statistician) statistician).printAllStats();
 
         accidentDispatcher.deleteObserver(statistician);
         accidentDispatcher.deleteObserver(agentAbw);
-        accidentDispatcher.setAccidentType("Truck hit a tree.");
         System.out.println("\nThird accident (statistician and agentAbw removed):");
-        accidentDispatcher.notifyObservers();
+        accidentDispatcher.accidentHappened("Truck hit a tree.");
     }
 }
